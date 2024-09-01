@@ -3,6 +3,8 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.forms import UserCreationForm
 from .models import Category, Post, Comment
+from django.contrib.auth import login
+from django.views.generic import TemplateView
 from django.contrib import messages
 from django.urls import reverse_lazy
 
@@ -15,6 +17,17 @@ def register(request):
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account created for {username}!')
             return redirect('login')
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/register.html', {'form': form})
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)  # Log the user in after registration
+            return redirect('home')  # Redirect to a homepage or other page
     else:
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
@@ -109,3 +122,7 @@ class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         comment = self.get_object()
         return self.request.user == comment.author
+    
+class HomeView(TemplateView):
+    template_name = 'home.html'
+    

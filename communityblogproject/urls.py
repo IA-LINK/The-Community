@@ -16,7 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from CBP.views import HomeView
+from CBP import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.HomeView.as_view(), name='home'),
+    # add this lines of settings
+    path('register/', views.register, name='register'),
+    path('post/', include('CBP.urls')),
 ]

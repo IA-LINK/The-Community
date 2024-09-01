@@ -1,10 +1,14 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
+from . import views
 from .views import CategoryListView, CategoryDetailView, CategoryCreateView, CategoryUpdateView, CategoryDeleteView, \
                     PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView, \
                     CommentCreateView, CommentDeleteView, register
 
 urlpatterns = [
+    # Home views
+    path('', views.HomeView.as_view(), name='home'),
+    path('register/', views.register, name='register'),
     # Category URLs
     path('categories/', CategoryListView.as_view(), name='category-list'),
     path('category/<int:pk>/', CategoryDetailView.as_view(), name='category-detail'),
