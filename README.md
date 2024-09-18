@@ -6,7 +6,7 @@ Welcome to The Community Blog! 🎉 This dynamic platform empowers users to expr
 
 ✨ **Deployed Site: https://github.com/IA-LINK/The-Community.git
 📝 Final Project Landing page: https://ia-link.github.io/cbp_landing_page/
-👤 **Author LinkedIn:** [Mmakoena Mokoena](https://www.linkedin.com/in/mmakoena-mokoena)
+👤 **Author LinkedIn:** [Mmakoena Mokoena](https://www.linkedin.com/in/mmakoena-mokoena) and James Ikwogya
 
 ---
 
@@ -75,4 +75,5 @@ Thank you for checking out The Community Blog! We hope you enjoy using it as muc
 
 
 ![image](https://github.com/user-attachments/assets/ed725ea2-5ba8-4bb5-95d3-4302a0691126)
+![Screenshot_16-9-2024_141217_github com](https://github.com/user-attachments/assets/04cc360c-2021-430e-8b93-e31264802cda)
 
